@@ -6,12 +6,7 @@ exports.handler = async function(event) {
   }
 
   try {
-    const { amount, alias, anonymous } = JSON.parse(event.body);
-
-    if (!amount || amount < 1) {
-      return { statusCode: 400, body: JSON.stringify({ error: 'Invalid amount' }) };
-    }
-
+    const { amount, alias, anonymous, custom } = JSON.parse(event.body);
     const donorName = anonymous ? 'Anonymous' : (alias && alias.trim() ? alias.trim() : 'Anonymous');
 
     const session = await stripe.checkout.sessions.create({
@@ -23,24 +18,21 @@ exports.handler = async function(event) {
             name: 'Donation — For No Reason',
             description: 'A social experiment. No cause. No reason.',
           },
-          unit_amount: Math.round(amount * 100),
+          unit_amount: custom ? undefined : Math.round((amount || 1) * 100),
+          ...(custom && { unit_amount: 100 }),
         },
         quantity: 1,
+        ...(custom && { adjustable_quantity: { enabled: true, minimum: 1 } }),
       }],
       mode: 'payment',
       success_url: 'https://fornoreason.org?donated=true',
       cancel_url: 'https://fornoreason.org',
-      metadata: {
-        donor_name: donorName,
-      },
+      metadata: { donor_name: donorName },
     });
 
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       body: JSON.stringify({ url: session.url }),
     };
   } catch (error) {
