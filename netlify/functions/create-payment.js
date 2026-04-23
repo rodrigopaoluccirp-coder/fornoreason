@@ -1,19 +1,15 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
 exports.handler = async function(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not allowed' };
   }
-
   try {
     const { amount, alias, anonymous } = JSON.parse(event.body);
     
     if (!amount || amount < 0.5) {
       return { statusCode: 400, body: JSON.stringify({ error: 'Invalid amount' }) };
     }
-
     const donorName = anonymous ? 'Anonymous' : (alias && alias.trim() ? alias.trim() : 'Anonymous');
-
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [{
@@ -31,8 +27,10 @@ exports.handler = async function(event) {
       success_url: 'https://fornoreason.org?donated=true',
       cancel_url: 'https://fornoreason.org',
       metadata: { donor_name: donorName },
+      payment_intent_data: {
+        metadata: { donor_name: donorName },
+      },
     });
-
     return {
       statusCode: 200,
       headers: { 
