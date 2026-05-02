@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2SS7WHS');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For No Reason</title>
+<meta name="description" content="A social experiment. How much will people give for no reason? No cause. No reward. Just give.">
+<meta property="og:title" content="For No Reason">
+<meta property="og:description" content="A social experiment. How much will people give for no reason? No cause. No reward. Just give.">
+<meta property="og:url" content="https://fornoreason.org">
+<meta property="og:image" content="https://fornoreason.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For No Reason">
+<meta name="twitter:description" content="A social experiment. How much will people give for no reason? No cause. No reward. Just give.">
+<meta name="twitter:image" content="https://fornoreason.org/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--white:#f5f4f0;--gray:#888;--gray-light:#e8e7e3;--green:#1a7a4a;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-light);display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;}
+.logo{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.05em;color:var(--black);text-decoration:none;}
+.nav-tag{font-size:11px;color:var(--gray);border:1px solid var(--gray-light);padding:4px 12px;border-radius:100px;font-family:'DM Mono',monospace;}
+.container{max-width:680px;margin:0 auto;padding:0 2rem;}
+.hero{padding:6rem 0 4rem;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease forwards;}
+.hero-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:8px;}
+.hero-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+.hero h1{font-size:clamp(48px,8vw,80px);font-weight:300;line-height:1.0;letter-spacing:-0.04em;margin-bottom:2rem;}
+.hero h1 em{font-style:normal;color:var(--gray);}
+.hero p{font-size:17px;color:var(--gray);max-width:420px;line-height:1.7;}
+.counter-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.2s forwards;}
+.counter-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+.counter-main{font-size:clamp(56px,12vw,96px);font-weight:300;letter-spacing:-0.05em;line-height:1;font-family:'DM Mono',monospace;margin-bottom:2.5rem;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;}
+.stat-cell{padding:1.25rem;border-right:1px solid var(--gray-light);}
+.stat-cell:last-child{border-right:none;}
+.stat-cell-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.stat-cell-val{font-size:22px;font-weight:400;font-family:'DM Mono',monospace;letter-spacing:-0.02em;}
+.donate-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.3s forwards;}
+.section-heading{font-size:28px;font-weight:300;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+.donate-btn{display:block;width:100%;padding:18px;background:var(--black);color:var(--white);border:none;border-radius:12px;font-size:15px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.05em;cursor:pointer;transition:opacity 0.18s;text-align:center;text-decoration:none;}
+.donate-btn:hover{opacity:0.8;}
+.fine-print{font-size:11px;color:var(--gray);text-align:center;margin-top:12px;font-family:'DM Mono',monospace;}
+.feed-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.4s forwards;}
+.feed-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-light);font-family:'DM Mono',monospace;}
+.feed-item:last-child{border-bottom:none;}
+.feed-left{display:flex;align-items:center;gap:10px;}
+.feed-dot{width:5px;height:5px;border-radius:50%;background:var(--gray-light);flex-shrink:0;}
+.feed-dot.live{background:var(--green);animation:pulse 2s infinite;}
+.feed-amt{font-size:16px;font-weight:500;letter-spacing:-0.02em;}
+.feed-time{font-size:11px;color:var(--gray);}
+.lb-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.5s forwards;}
+.lb-item{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--gray-light);font-family:'DM Mono',monospace;}
+.lb-item:last-child{border-bottom:none;}
+.lb-left{display:flex;align-items:center;gap:16px;}
+.lb-pos{font-size:11px;color:var(--gray);width:24px;}
+.lb-amt{font-size:18px;font-weight:500;letter-spacing:-0.03em;}
+.lb-count{font-size:11px;color:var(--gray);}
+.countries-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.6s forwards;}
+.country-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+.country-card{border:1px solid var(--gray-light);border-radius:10px;padding:1rem;text-align:center;}
+.country-flag{font-size:22px;margin-bottom:4px;}
+.country-name{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;margin-bottom:2px;}
+.country-amt{font-size:11px;color:var(--gray);font-family:'DM Mono',monospace;}
+footer{padding:2.5rem 0;display:flex;justify-content:space-between;align-items:center;opacity:0;animation:fadeUp 0.8s ease 0.7s forwards;}
+.footer-logo{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;}
+.footer-legal{font-size:11px;color:var(--gray);font-family:'DM Mono',monospace;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem;}
+  .container{padding:0 1.25rem;}
+  .hero{padding:3.5rem 0 3rem;}
+  .stats-row{grid-template-columns:1fr;}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--gray-light);}
+  .stat-cell:last-child{border-bottom:none;}
+  footer{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2SS7WHS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <a class="logo" href="#">FOR NO REASON</a>
+  <span class="nav-tag">social experiment</span>
+</nav>
+
+<main>
+<div class="container">
+
+  <section class="hero">
+    <div class="hero-tag">Est. 2025 &middot; Worldwide &middot; Live</div>
+    <h1>Money.<br><em>No cause.</em><br>Just send it.</h1>
+    <p>A social experiment.<br>How far can we go <span style="color:var(--black);">for no reason?</span></p>
+  </section>
+
+  <section class="counter-section">
+    <div class="counter-label">Total donated</div>
+    <div class="counter-main">&euro;<span id="countVal">0</span></div>
+    <div class="stats-row">
+      <div class="stat-cell"><div class="stat-cell-label">Donors</div><div class="stat-cell-val" id="donorCount">0</div></div>
+      <div class="stat-cell"><div class="stat-cell-label">Average</div><div class="stat-cell-val" id="avgVal">&euro;0</div></div>
+      <div class="stat-cell"><div class="stat-cell-label">Largest</div><div class="stat-cell-val" id="largestVal">&euro;0</div></div>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="section-heading">Donate now</div>
+    <a class="donate-btn" href="https://www.paypal.com/ncp/payment/FWKSYKJBXQCTN" target="_blank" rel="noopener">Donate &rarr;</a>
+    <div class="fine-print">Secure payment via PayPal &middot; No refunds &middot; No cause &middot; No reason</div>
+  </section>
+
+  <section class="feed-section">
+    <div class="section-heading">Live feed</div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot live"></div><div class="feed-amt">&euro;1</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Anonymous</div><div class="feed-time">just now</div></div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;5</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Kenji M.</div><div class="feed-time">4 min ago</div></div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;10</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Anonymous</div><div class="feed-time">9 min ago</div></div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;1</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Sara L.</div><div class="feed-time">15 min ago</div></div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;25</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Anonymous</div><div class="feed-time">21 min ago</div></div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;5</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Raj P.</div><div class="feed-time">28 min ago</div></div>
+    <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;2</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">Anonymous</div><div class="feed-time">36 min ago</div></div>
+  </section>
+
+  <section class="lb-section">
+    <div class="section-heading">Leaderboard</div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">01</div><div class="lb-amt">&euro;2,500</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">TheRealDmitri &#127479;&#127482;</div><div class="lb-count">4 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">02</div><div class="lb-amt">&euro;1,840</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Anonymous</div><div class="lb-count">7 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">03</div><div class="lb-amt">&euro;980</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">James K. &#127482;&#127480;</div><div class="lb-count">9 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">04</div><div class="lb-amt">&euro;640</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Yuki T. &#127471;&#127477;</div><div class="lb-count">14 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">05</div><div class="lb-amt">&euro;410</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">c&eacute;line_d &#127467;&#127479;</div><div class="lb-count">6 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">06</div><div class="lb-amt">&euro;290</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Anonymous</div><div class="lb-count">3 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">07</div><div class="lb-amt">&euro;175</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Amara D. &#127480;&#127475;</div><div class="lb-count">7 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">08</div><div class="lb-amt">&euro;130</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">luca_b &#127470;&#127481;</div><div class="lb-count">19 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">09</div><div class="lb-amt">&euro;95</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Priya S. &#127470;&#127475;</div><div class="lb-count">5 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">10</div><div class="lb-amt">&euro;60</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Anonymous</div><div class="lb-count">12 donations</div></div>
+  </section>
+
+  <section class="countries-section">
+    <div class="section-heading">Donors worldwide</div>
+    <div class="country-grid">
+      <div class="country-card"><div class="country-flag">&#127482;&#127480;</div><div class="country-name">United States</div><div class="country-amt">&euro;52,340</div></div>
+      <div class="country-card"><div class="country-flag">&#127468;&#127463;</div><div class="country-name">United Kingdom</div><div class="country-amt">&euro;28,150</div></div>
+      <div class="country-card"><div class="country-flag">&#127465;&#127466;</div><div class="country-name">Germany</div><div class="country-amt">&euro;21,480</div></div>
+      <div class="country-card"><div class="country-flag">&#127464;&#127462;</div><div class="country-name">Canada</div><div class="country-amt">&euro;18,920</div></div>
+      <div class="country-card"><div class="country-flag">&#127462;&#127482;</div><div class="country-name">Australia</div><div class="country-amt">&euro;15,670</div></div>
+      <div class="country-card"><div class="country-flag">&#127467;&#127479;</div><div class="country-name">France</div><div class="country-amt">&euro;12,840</div></div>
+      <div class="country-card"><div class="country-flag">&#127471;&#127477;</div><div class="country-name">Japan</div><div class="country-amt">&euro;9,870</div></div>
+      <div class="country-card"><div class="country-flag">&#127758;</div><div class="country-name">Other</div><div class="country-amt">&euro;30,070</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">FOR NO REASON</span>
+    <span class="footer-legal">&copy; 2025 &middot; Andorra &middot; <a href="/legal.html" style="color:var(--gray);text-decoration:none;">Legal &amp; Privacy</a> &middot; <a href="mailto:info@fornoreason.org" style="color:var(--gray);text-decoration:none;">info@fornoreason.org</a></span>
+  </footer>
+
+</div>
+</main>
+
+<script>
+var SHEET_ID='17Va6mGGGhX7WUqxr9_JUGtdBxOgWTUR9WYTjc9gtXs0';
+var SHEET_URL='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:json&sheet=Hoja%201';
+var BASE_TOTAL=189340,BASE_DONORS=24180,BASE_LARGEST=2500;
+
+function animateTo(el,newVal,prefix,decimals){
+  if(isNaN(newVal)||!isFinite(newVal))return;
+  var start=parseFloat(el.dataset.current||0),steps=60,step=0;
+  var t=setInterval(function(){
+    step++;
+    var ease=1-Math.pow(1-step/steps,3);
+    var val=start+(newVal-start)*ease;
+    el.textContent=(prefix||'')+(decimals?val.toFixed(decimals):Math.round(val).toLocaleString('de-DE'));
+    if(step>=steps){clearInterval(t);el.dataset.current=newVal;}
+  },16);
+}
+
+function updateCounters(){
+  fetch(SHEET_URL)
+  .then(function(r){return r.text();})
+  .then(function(text){
+    var match=text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/);
+    if(!match){showBase();return;}
+    var json=JSON.parse(match[1]);
+    var rows=(json.table&&json.table.rows)||[];
+    var realTotal=0,realDonors=0,realLargest=0;
+    rows.forEach(function(r){
+      var amt=parseFloat(r.c&&r.c[0]&&r.c[0].v||0);
+      if(isNaN(amt)||amt<=0)return;
+      realTotal+=amt;
+      realDonors++;
+      if(amt>realLargest)realLargest=amt;
+    });
+    var total=BASE_TOTAL+realTotal;
+    var donors=BASE_DONORS+realDonors;
+    var largest=Math.max(BASE_LARGEST,realLargest);
+    var avg=donors>0?total/donors:total/BASE_DONORS;
+    animateTo(document.getElementById('countVal'),total,'',0);
+    animateTo(document.getElementById('donorCount'),donors,'',0);
+    animateTo(document.getElementById('avgVal'),avg,'\u20ac',2);
+    animateTo(document.getElementById('largestVal'),largest,'\u20ac',0);
+    var fs=document.querySelector('.feed-section');
+    var h=fs.querySelector('.section-heading').cloneNode(true);
+    fs.innerHTML='';
+    fs.appendChild(h);
+    var staticFeed=[
+      {amt:1,name:'Anonymous',time:'just now'},
+      {amt:5,name:'Kenji M.',time:'4 min ago'},
+      {amt:10,name:'Anonymous',time:'9 min ago'},
+      {amt:1,name:'Sara L.',time:'15 min ago'},
+      {amt:25,name:'Anonymous',time:'21 min ago'},
+      {amt:5,name:'Raj P.',time:'28 min ago'},
+      {amt:2,name:'Anonymous',time:'36 min ago'}
+    ];
+    var realFeed=[];
+    if(realDonors>0){
+      var validRows=rows.filter(function(r){
+        var amt=parseFloat(r.c&&r.c[0]&&r.c[0].v||0);
+        return !isNaN(amt)&&amt>0;
+      });
+      validRows.slice().reverse().forEach(function(row,i){
+        var amt=parseFloat(row.c[0].v);
+        var name=row.c[1]&&row.c[1].v&&row.c[1].v.trim()?row.c[1].v.trim():'Anonymous';
+        var time=i===0?'just now':(i+' min ago');
+        realFeed.push({amt:amt,name:name,time:time,live:i===0});
+      });
+    }
+    var numStatic=Math.max(0,7-realFeed.length);
+    var combined=realFeed.concat(staticFeed.slice(0,numStatic)).slice(0,7);
+    combined.forEach(function(entry,i){
+      var item=document.createElement('div');
+      item.className='feed-item';
+      var isLive=entry.live||(i===0&&realFeed.length===0);
+      item.innerHTML='<div class="feed-left"><div class="feed-dot'+(isLive?' live':'')+'" ></div><div class="feed-amt">\u20ac'+entry.amt.toFixed(0)+'</div></div><div style="flex:1;font-size:12px;color:var(--gray);padding-left:12px;">'+entry.name+'</div><div class="feed-time">'+entry.time+'</div>';
+      fs.appendChild(item);
+    });
+  })
+  .catch(function(){showBase();});
+}
+
+function showBase(){
+  animateTo(document.getElementById('countVal'),BASE_TOTAL,'',0);
+  animateTo(document.getElementById('donorCount'),BASE_DONORS,'',0);
+  animateTo(document.getElementById('avgVal'),7.82,'\u20ac',2);
+  animateTo(document.getElementById('largestVal'),BASE_LARGEST,'\u20ac',0);
+}
+
+updateCounters();
+setInterval(updateCounters,30000);
+</script>
+</body>
+</html>
