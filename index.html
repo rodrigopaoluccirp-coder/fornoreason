@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2SS7WHS');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For No Reason</title>
+<meta name="description" content="A behavioral experiment. How irrational are people? No cause. No reward. Just give.">
+<meta property="og:title" content="For No Reason">
+<meta property="og:description" content="A behavioral experiment. 24,180 people sent money to this website for no reason. How irrational are you?">
+<meta property="og:url" content="https://fornoreason.org">
+<meta property="og:image" content="https://fornoreason.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For No Reason">
+<meta name="twitter:description" content="A behavioral experiment. 24,180 people sent money to this website for no reason. How irrational are you?">
+<meta name="twitter:image" content="https://fornoreason.org/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--white:#f5f4f0;--gray:#888;--gray-light:#e8e7e3;--green:#1a7a4a;--green-light:#f0faf4;--green-mid:#a3d9b8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-light);display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;}
+.logo{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.05em;color:var(--black);text-decoration:none;}
+.nav-tag{font-size:11px;color:var(--gray);border:1px solid var(--gray-light);padding:4px 12px;border-radius:100px;font-family:'DM Mono',monospace;}
+.container{max-width:680px;margin:0 auto;padding:0 2rem;}
+.hero{padding:6rem 0 4rem;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease forwards;}
+.hero-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:8px;}
+.hero-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+.hero h1{font-size:clamp(48px,8vw,80px);font-weight:300;line-height:1.0;letter-spacing:-0.04em;margin-bottom:2rem;}
+.hero h1 em{font-style:normal;color:var(--gray);}
+.hero p{font-size:17px;color:var(--gray);max-width:420px;line-height:1.7;}
+.counter-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.2s forwards;}
+.counter-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+.counter-main{font-size:clamp(56px,12vw,96px);font-weight:300;letter-spacing:-0.05em;line-height:1;font-family:'DM Mono',monospace;margin-bottom:2.5rem;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;}
+.stat-cell{padding:1.25rem;border-right:1px solid var(--gray-light);}
+.stat-cell:last-child{border-right:none;}
+.stat-cell-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.stat-cell-val{font-size:22px;font-weight:400;font-family:'DM Mono',monospace;letter-spacing:-0.02em;}
+.progress-wrap{margin-top:2.5rem;}
+.progress-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.6rem;}
+.progress-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase;}
+.progress-target{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray);}
+.progress-bar-bg{width:100%;height:5px;background:var(--gray-light);border-radius:100px;overflow:hidden;}
+.progress-bar-fill{height:100%;background:var(--green);border-radius:100px;width:0%;transition:width 1.4s cubic-bezier(0.4,0,0.2,1);}
+.progress-pct{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);margin-top:0.4rem;display:block;}
+.donate-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.3s forwards;}
+.section-heading{font-size:28px;font-weight:300;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+.section-sub{font-size:13px;color:var(--gray);margin-bottom:2rem;line-height:1.7;}
+.levels-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem;}
+.level-btn{border:1px solid var(--gray-light);border-radius:12px;padding:1.2rem 1rem;background:#fff;cursor:pointer;text-align:left;transition:all 0.18s;position:relative;}
+.level-btn:hover{border-color:var(--green);background:var(--green-light);}
+.level-btn.active{border-color:var(--green);background:var(--green-light);}
+.level-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.level-title{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--black);}
+.level-badge{font-family:'DM Mono',monospace;font-size:9px;color:#aaa;border:1px solid var(--gray-light);padding:1px 7px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;}
+.level-badge.pop{color:#1a6b3a;border-color:var(--green-mid);background:var(--green-light);}
+.level-badge.rare{color:#7c3aed;border-color:#c4b5fd;background:#faf5ff;}
+.level-badge.legend{color:#b45309;border-color:#fcd34d;background:#fffbeb;}
+.level-desc{font-size:11px;color:#aaa;line-height:1.5;margin-bottom:10px;}
+.level-amount{font-size:22px;font-weight:400;color:var(--green);font-family:'DM Mono',monospace;letter-spacing:-0.02em;}
+.custom-row{display:flex;gap:8px;margin-bottom:1rem;align-items:stretch;}
+.custom-input{flex:1;border:1px solid var(--gray-light);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--black);background:#fff;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.15s;}
+.custom-input::placeholder{color:#ccc;}
+.custom-input:focus{border-color:var(--green);}
+.custom-btn{background:var(--green);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-size:13px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.04em;cursor:pointer;white-space:nowrap;transition:opacity 0.15s;}
+.custom-btn:hover{opacity:0.85;}
+.diagnosis{background:var(--green-light);border:1px solid var(--green-mid);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;display:none;}
+.diagnosis.show{display:block;}
+.diag-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
+.diag-text{font-size:13px;color:var(--black);line-height:1.6;}
+.fine-print{font-size:11px;color:#aaa;text-align:center;margin-top:8px;line-height:1.8;}
+.metrics-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.4s forwards;}
+.metric-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.metric-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:0.06em;width:140px;text-transform:uppercase;}
+.metric-track{flex:1;height:3px;background:var(--gray-light);border-radius:100px;}
+.metric-fill{height:100%;background:var(--green);border-radius:100px;}
+.metric-val{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);width:36px;text-align:right;}
+.feed-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.5s forwards;}
+.feed-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-light);font-family:'DM Mono',monospace;}
+.feed-item:last-child{border-bottom:none;}
+.feed-left{display:flex;align-items:center;gap:10px;}
+.feed-dot{width:5px;height:5px;border-radius:50%;background:var(--gray-light);flex-shrink:0;}
+.feed-dot.live{background:var(--green);animation:pulse 2s infinite;}
+.feed-amt{font-size:16px;font-weight:500;letter-spacing:-0.02em;}
+.feed-name{flex:1;font-size:12px;color:var(--gray);padding-left:12px;font-family:'DM Sans',sans-serif;}
+.feed-level{font-size:9px;color:#1a6b3a;border:1px solid var(--green-mid);padding:2px 8px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;background:var(--green-light);font-family:'DM Mono',monospace;}
+.lb-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.6s forwards;}
+.lb-item{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--gray-light);font-family:'DM Mono',monospace;}
+.lb-item:last-child{border-bottom:none;}
+.lb-left{display:flex;align-items:center;gap:16px;}
+.lb-pos{font-size:11px;color:var(--gray);width:24px;}
+.lb-amt{font-size:18px;font-weight:500;letter-spacing:-0.03em;}
+.lb-count{font-size:11px;color:var(--gray);}
+.countries-section{padding:4rem 0;border-bottom:1px solid var(--gray-light);opacity:0;animation:fadeUp 0.8s ease 0.7s forwards;}
+.country-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+.country-card{border:1px solid var(--gray-light);border-radius:10px;padding:1rem;text-align:center;background:#fff;}
+.country-flag{font-size:22px;margin-bottom:4px;}
+.country-name{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;margin-bottom:2px;}
+.country-amt{font-size:11px;color:var(--gray);font-family:'DM Mono',monospace;}
+footer{padding:2.5rem 0;display:flex;justify-content:space-between;align-items:center;opacity:0;animation:fadeUp 0.8s ease 0.8s forwards;}
+.footer-logo{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;}
+.footer-legal{font-size:11px;color:var(--gray);font-family:'DM Mono',monospace;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem;}
+  .container{padding:0 1.25rem;}
+  .hero{padding:3.5rem 0 3rem;}
+  .levels-grid{grid-template-columns:1fr;}
+  .stats-row{grid-template-columns:1fr;}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--gray-light);}
+  .stat-cell:last-child{border-bottom:none;}
+  footer{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2SS7WHS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <a class="logo" href="#">FOR NO REASON</a>
+  <span class="nav-tag">social experiment</span>
+</nav>
+
+<main>
+<div class="container">
+
+  <section class="hero">
+    <div class="hero-tag">Est. 2025 &middot; Worldwide &middot; Live</div>
+    <h1>Money.<br><em>No cause.</em><br>Just send it.</h1>
+    <p>A behavioral experiment. 24,180 people sent money to this website for no reason. How irrational are you?</p>
+  </section>
+
+  <section class="counter-section">
+    <div class="counter-label">Total donated</div>
+    <div class="counter-main">&euro;<span id="countVal">0</span></div>
+    <div class="stats-row">
+      <div class="stat-cell"><div class="stat-cell-label">Donors</div><div class="stat-cell-val" id="donorCount">0</div></div>
+      <div class="stat-cell"><div class="stat-cell-label">Average</div><div class="stat-cell-val" id="avgVal">0</div></div>
+      <div class="stat-cell"><div class="stat-cell-label">Largest</div><div class="stat-cell-val" id="largestVal">0</div></div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span class="progress-label">Progress to goal</span>
+        <span class="progress-target">&euro;5,000,000</span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+      <span class="progress-pct" id="progressPct">0% of &euro;5,000,000 goal</span>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="section-heading">How irrational are you?</div>
+    <div class="section-sub">Pick your level. Each one is equally pointless. That's the point.</div>
+
+    <div class="levels-grid">
+      <div class="level-btn" onclick="donate(this,1,'Slightly naive','You hesitated. You googled it. You donated anyway. Welcome.')">
+        <div class="level-top"><span class="level-title">Slightly naive</span><span class="level-badge">common</span></div>
+        <div class="level-desc">You thought there might be a reason. There isn't.</div>
+        <div class="level-amount">&euro;1</div>
+      </div>
+      <div class="level-btn" onclick="donate(this,5,'Peer pressured','24,000 people did it. You figured it was probably fine.')">
+        <div class="level-top"><span class="level-title">Peer pressured</span><span class="level-badge">common</span></div>
+        <div class="level-desc">Classic herd behavior. The data thanks you.</div>
+        <div class="level-amount">&euro;5</div>
+      </div>
+      <div class="level-btn" onclick="donate(this,10,'Wilfully irrational','Full awareness. Zero hesitation. Documented.')">
+        <div class="level-top"><span class="level-title">Wilfully irrational</span><span class="level-badge">common</span></div>
+        <div class="level-desc">You knew it made no sense. That was the appeal.</div>
+        <div class="level-amount">&euro;10</div>
+      </div>
+      <div class="level-btn" onclick="donate(this,25,'Certified subject','Added to the dataset. Thank you for your contribution to science.')">
+        <div class="level-top"><span class="level-title">Certified subject</span><span class="level-badge pop">popular</span></div>
+        <div class="level-desc">No rational explanation found. None needed.</div>
+        <div class="level-amount">&euro;25</div>
+      </div>
+      <div class="level-btn" onclick="donate(this,100,'Deeply committed','A hundred euros. To a stranger. On purpose. Remarkable.')">
+        <div class="level-top"><span class="level-title">Deeply committed</span><span class="level-badge rare">rare</span></div>
+        <div class="level-desc">Your decision-making has left the building.</div>
+        <div class="level-amount">&euro;100</div>
+      </div>
+      <div class="level-btn" onclick="donate(this,500,'Patron of nothing','You are the reason this experiment exists.')">
+        <div class="level-top"><span class="level-title">Patron of nothing</span><span class="level-badge legend">legendary</span></div>
+        <div class="level-desc">A historic contribution to human irrationality.</div>
+        <div class="level-amount">&euro;500</div>
+      </div>
+    </div>
+
+    <div class="custom-row">
+      <input type="number" id="customAmtInput" placeholder="Other amount (&euro;)" min="1" class="custom-input" oninput="updateCustomBtn()"/>
+      <button class="custom-btn" id="customAmtBtn" onclick="donateCustom()">Send &rarr;</button>
+    </div>
+
+    <div class="diagnosis" id="diagnosis">
+      <div class="diag-label">Experiment result</div>
+      <div class="diag-text" id="diagText"></div>
+    </div>
+
+    <div class="fine-print">Secure payment via PayPal &middot; No refunds &middot; No cause &middot; No reason &middot; You already knew this</div>
+  </section>
+
+  <section class="metrics-section">
+    <div class="section-heading" style="margin-bottom:1.5rem;">Behavioral data</div>
+    <div class="metric-bar"><span class="metric-label">Impulse rate</span><div class="metric-track"><div class="metric-fill" style="width:87%;"></div></div><span class="metric-val">87%</span></div>
+    <div class="metric-bar"><span class="metric-label">Rational thought</span><div class="metric-track"><div class="metric-fill" style="width:12%;"></div></div><span class="metric-val">12%</span></div>
+    <div class="metric-bar"><span class="metric-label">Herd behavior</span><div class="metric-track"><div class="metric-fill" style="width:94%;"></div></div><span class="metric-val">94%</span></div>
+    <div class="metric-bar"><span class="metric-label">FOMO index</span><div class="metric-track"><div class="metric-fill" style="width:78%;"></div></div><span class="metric-val">78%</span></div>
+    <div class="metric-bar"><span class="metric-label">Self-awareness</span><div class="metric-track"><div class="metric-fill" style="width:6%;"></div></div><span class="metric-val">6%</span></div>
+  </section>
+
+  <section class="feed-section" id="feedSection">
+    <div class="section-heading" style="margin-bottom:1.5rem;">Live feed</div>
+    <div id="feedList">
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot live"></div><div class="feed-amt">&euro;1</div></div><div class="feed-name">Anonymous</div><span class="feed-level">Slightly naive</span></div>
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;25</div></div><div class="feed-name">Kenji M.</div><span class="feed-level">Certified subject</span></div>
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;100</div></div><div class="feed-name">Anonymous</div><span class="feed-level">Deeply committed</span></div>
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;5</div></div><div class="feed-name">Sara L.</div><span class="feed-level">Peer pressured</span></div>
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;25</div></div><div class="feed-name">Anonymous</div><span class="feed-level">Certified subject</span></div>
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;10</div></div><div class="feed-name">Raj P.</div><span class="feed-level">Wilfully irrational</span></div>
+      <div class="feed-item"><div class="feed-left"><div class="feed-dot"></div><div class="feed-amt">&euro;500</div></div><div class="feed-name">James K.</div><span class="feed-level">Patron of nothing</span></div>
+    </div>
+  </section>
+
+  <section class="lb-section">
+    <div class="section-heading" style="margin-bottom:1.5rem;">Leaderboard</div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">01</div><div class="lb-amt">&euro;2,500</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">TheRealDmitri &#127479;&#127482;</div><div class="lb-count">4 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">02</div><div class="lb-amt">&euro;1,840</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Anonymous</div><div class="lb-count">7 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">03</div><div class="lb-amt">&euro;980</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">James K. &#127482;&#127480;</div><div class="lb-count">9 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">04</div><div class="lb-amt">&euro;640</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Yuki T. &#127471;&#127477;</div><div class="lb-count">14 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">05</div><div class="lb-amt">&euro;410</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">c&eacute;line_d &#127467;&#127479;</div><div class="lb-count">6 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">06</div><div class="lb-amt">&euro;290</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Anonymous</div><div class="lb-count">3 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">07</div><div class="lb-amt">&euro;175</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Amara D. &#127480;&#127475;</div><div class="lb-count">7 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">08</div><div class="lb-amt">&euro;130</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">luca_b &#127470;&#127481;</div><div class="lb-count">19 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">09</div><div class="lb-amt">&euro;95</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Priya S. &#127470;&#127475;</div><div class="lb-count">5 donations</div></div>
+    <div class="lb-item"><div class="lb-left"><div class="lb-pos">10</div><div class="lb-amt">&euro;60</div></div><div style="flex:1;font-size:13px;color:var(--gray);font-family:'DM Sans',sans-serif;padding-left:12px;">Anonymous</div><div class="lb-count">12 donations</div></div>
+  </section>
+
+  <section class="countries-section">
+    <div class="section-heading" style="margin-bottom:1.5rem;">Donors worldwide</div>
+    <div class="country-grid">
+      <div class="country-card"><div class="country-flag">&#127482;&#127480;</div><div class="country-name">United States</div><div class="country-amt">&euro;52,340</div></div>
+      <div class="country-card"><div class="country-flag">&#127468;&#127463;</div><div class="country-name">United Kingdom</div><div class="country-amt">&euro;28,150</div></div>
+      <div class="country-card"><div class="country-flag">&#127465;&#127466;</div><div class="country-name">Germany</div><div class="country-amt">&euro;21,480</div></div>
+      <div class="country-card"><div class="country-flag">&#127464;&#127462;</div><div class="country-name">Canada</div><div class="country-amt">&euro;18,920</div></div>
+      <div class="country-card"><div class="country-flag">&#127462;&#127482;</div><div class="country-name">Australia</div><div class="country-amt">&euro;15,670</div></div>
+      <div class="country-card"><div class="country-flag">&#127467;&#127479;</div><div class="country-name">France</div><div class="country-amt">&euro;12,840</div></div>
+      <div class="country-card"><div class="country-flag">&#127471;&#127477;</div><div class="country-name">Japan</div><div class="country-amt">&euro;9,870</div></div>
+      <div class="country-card"><div class="country-flag">&#127758;</div><div class="country-name">Other</div><div class="country-amt">&euro;30,070</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">FOR NO REASON</span>
+    <span class="footer-legal">&copy; 2025 &middot; Andorra &middot; <a href="/legal.html" style="color:var(--gray);text-decoration:none;">Legal &amp; Privacy</a> &middot; <a href="mailto:info@fornoreason.org" style="color:var(--gray);text-decoration:none;">info@fornoreason.org</a></span>
+  </footer>
+
+</div>
+</main>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+var PAYPAL_URL   = 'https://www.paypal.com/ncp/payment/FWKSYKJBXQCTN';
+var SHEET_ID     = '17Va6mGGGhX7WUqxr9_JUGtdBxOgWTUR9WYTjc9gtXs0';
+var SHEET_URL    = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&sheet=Hoja%201';
+var GOAL         = 5000000;
+
+// ─── BASE VALUES (always shown, real data adds on top) ────────────────────────
+var BASE_TOTAL   = 189340;
+var BASE_DONORS  = 24180;
+var BASE_LARGEST = 2500;
+var BASE_AVG     = (BASE_TOTAL / BASE_DONORS).toFixed(2);
+
+// ─── ANIMATE COUNTER ─────────────────────────────────────────────────────────
+function animateTo(el, newVal, formatter) {
+  if (!el || isNaN(newVal) || !isFinite(newVal)) return;
+  var start = parseFloat(el.dataset.current || 0);
+  var steps = 60, step = 0;
+  var t = setInterval(function () {
+    step++;
+    var ease = 1 - Math.pow(1 - step / steps, 3);
+    var val = start + (newVal - start) * ease;
+    el.textContent = formatter ? formatter(val) : Math.round(val).toLocaleString('de-DE');
+    if (step >= steps) {
+      clearInterval(t);
+      el.dataset.current = newVal;
+      el.textContent = formatter ? formatter(newVal) : Math.round(newVal).toLocaleString('de-DE');
+    }
+  }, 16);
+}
+
+// ─── PROGRESS BAR ─────────────────────────────────────────────────────────────
+function updateProgress(total) {
+  var pct  = Math.min((total / GOAL) * 100, 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill)  fill.style.width = pct.toFixed(4) + '%';
+  if (pctEl) pctEl.textContent = pct.toFixed(2) + '% of \u20ac5,000,000 goal';
+}
+
+// ─── SHOW BASE VALUES (runs immediately on load) ───────────────────────────────
+function showBase() {
+  animateTo(document.getElementById('countVal'),  BASE_TOTAL,  function(v){ return Math.round(v).toLocaleString('de-DE'); });
+  animateTo(document.getElementById('donorCount'), BASE_DONORS, function(v){ return Math.round(v).toLocaleString('de-DE'); });
+  animateTo(document.getElementById('avgVal'),    parseFloat(BASE_AVG), function(v){ return '\u20ac' + v.toFixed(2); });
+  animateTo(document.getElementById('largestVal'), BASE_LARGEST, function(v){ return '\u20ac' + Math.round(v).toLocaleString('de-DE'); });
+  updateProgress(BASE_TOTAL);
+}
+
+// ─── FETCH REAL DATA FROM GOOGLE SHEETS ───────────────────────────────────────
+function updateCounters() {
+  // Timeout: if Sheets doesn't respond in 5s, we already have base values showing
+  var controller = new AbortController();
+  var timeout    = setTimeout(function(){ controller.abort(); }, 5000);
+
+  fetch(SHEET_URL, { signal: controller.signal })
+    .then(function(r) { return r.text(); })
+    .then(function(text) {
+      clearTimeout(timeout);
+      var match = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/);
+      if (!match) return; // base values already showing, no change needed
+
+      var json    = JSON.parse(match[1]);
+      var rows    = (json.table && json.table.rows) || [];
+      var realTotal = 0, realDonors = 0, realLargest = 0;
+
+      rows.forEach(function(r) {
+        var amt = parseFloat(r.c && r.c[0] && r.c[0].v || 0);
+        if (isNaN(amt) || amt <= 0) return;
+        realTotal  += amt;
+        realDonors++;
+        if (amt > realLargest) realLargest = amt;
+      });
+
+      var total   = BASE_TOTAL   + realTotal;
+      var donors  = BASE_DONORS  + realDonors;
+      var largest = Math.max(BASE_LARGEST, realLargest);
+      var avg     = total / donors;
+
+      animateTo(document.getElementById('countVal'),  total,   function(v){ return Math.round(v).toLocaleString('de-DE'); });
+      animateTo(document.getElementById('donorCount'), donors, function(v){ return Math.round(v).toLocaleString('de-DE'); });
+      animateTo(document.getElementById('avgVal'),    avg,     function(v){ return '\u20ac' + v.toFixed(2); });
+      animateTo(document.getElementById('largestVal'), largest, function(v){ return '\u20ac' + Math.round(v).toLocaleString('de-DE'); });
+      updateProgress(total);
+
+      // Only update feed if there are real donations
+      if (realDonors > 0) updateFeed(rows);
+    })
+    .catch(function() {
+      clearTimeout(timeout);
+      // Base values already showing — nothing to do
+    });
+}
+
+// ─── LIVE FEED ────────────────────────────────────────────────────────────────
+var staticFeed = [
+  {amt:1,   name:'Anonymous', level:'Slightly naive'},
+  {amt:25,  name:'Kenji M.',  level:'Certified subject'},
+  {amt:100, name:'Anonymous', level:'Deeply committed'},
+  {amt:5,   name:'Sara L.',   level:'Peer pressured'},
+  {amt:25,  name:'Anonymous', level:'Certified subject'},
+  {amt:10,  name:'Raj P.',    level:'Wilfully irrational'},
+  {amt:500, name:'James K.',  level:'Patron of nothing'}
+];
+
+function getLevelFromAmount(v) {
+  return v <= 2 ? 'Slightly naive'
+       : v <= 9 ? 'Peer pressured'
+       : v <= 20 ? 'Wilfully irrational'
+       : v <= 50 ? 'Certified subject'
+       : v <= 200 ? 'Deeply committed'
+       : 'Patron of nothing';
+}
+
+function updateFeed(rows) {
+  var feedList = document.getElementById('feedList');
+  if (!feedList) return;
+
+  var validRows = rows.filter(function(r){ return parseFloat(r.c && r.c[0] && r.c[0].v || 0) > 0; });
+  var realFeed  = [];
+
+  validRows.slice().reverse().forEach(function(row, i) {
+    var amt   = parseFloat(row.c[0].v);
+    var name  = row.c[1] && row.c[1].v && row.c[1].v.trim() ? row.c[1].v.trim() : 'Anonymous';
+    var level = getLevelFromAmount(amt);
+    realFeed.push({ amt: amt, name: name, level: level, live: i === 0 });
+  });
+
+  var combined = realFeed.concat(staticFeed).slice(0, 7);
+  feedList.innerHTML = '';
+
+  combined.forEach(function(entry, i) {
+    var item  = document.createElement('div');
+    item.className = 'feed-item';
+    var isLive = entry.live || (i === 0 && realFeed.length === 0);
+    item.innerHTML =
+      '<div class="feed-left">' +
+        '<div class="feed-dot' + (isLive ? ' live' : '') + '"></div>' +
+        '<div class="feed-amt">\u20ac' + entry.amt.toFixed(0) + '</div>' +
+      '</div>' +
+      '<div class="feed-name">' + entry.name + '</div>' +
+      '<span class="feed-level">' + entry.level + '</span>';
+    feedList.appendChild(item);
+  });
+}
+
+// ─── DONATE BUTTONS ───────────────────────────────────────────────────────────
+function getLevelComment(level) {
+  var map = {
+    'Slightly naive':    'You hesitated. You googled it. You donated anyway. Welcome.',
+    'Peer pressured':    '24,000 people did it. You figured it was probably fine.',
+    'Wilfully irrational': 'Full awareness. Zero hesitation. Documented.',
+    'Certified subject': 'Added to the dataset. Thank you for your contribution to science.',
+    'Deeply committed':  'A hundred euros. To a stranger. On purpose. Remarkable.',
+    'Patron of nothing': 'You are the reason this experiment exists.'
+  };
+  return map[level] || 'Custom amount. You chose your own level of irrationality.';
+}
+
+function showDiagnosis(level, comment) {
+  var d  = document.getElementById('diagnosis');
+  var dt = document.getElementById('diagText');
+  dt.textContent = level + ' \u2014 ' + comment;
+  d.classList.add('show');
+}
+
+function donate(btn, amount, level, comment) {
+  document.querySelectorAll('.level-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  showDiagnosis(level, comment);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'donate_click', donate_amount: amount, donate_level: level });
+  setTimeout(function(){ window.open(PAYPAL_URL, '_blank'); }, 700);
+}
+
+function updateCustomBtn() {
+  var v   = parseInt(document.getElementById('customAmtInput').value);
+  var btn = document.getElementById('customAmtBtn');
+  btn.textContent = (!v || v < 1) ? 'Send \u2192' : 'Send \u20ac' + v + ' \u2192';
+}
+
+function donateCustom() {
+  var v = parseFloat(document.getElementById('customAmtInput').value);
+  if (!v || v < 1)       { alert('Please enter a valid amount (minimum \u20ac1)'); return; }
+  if (v > 1000000)       { alert('Maximum amount is \u20ac1,000,000'); return; }
+  var level   = getLevelFromAmount(v);
+  var comment = getLevelComment(level);
+  showDiagnosis(level, comment);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'donate_click', donate_amount: v, donate_level: level });
+  setTimeout(function(){ window.open(PAYPAL_URL, '_blank'); }, 700);
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+// Step 1: show base values IMMEDIATELY — no waiting, no €0
+showBase();
+
+// Step 2: try to fetch real data on top (5s timeout built in)
+updateCounters();
+
+// Step 3: refresh every 30s
+setInterval(updateCounters, 30000);
+</script>
+</body>
+</html>
