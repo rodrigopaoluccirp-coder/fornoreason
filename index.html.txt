@@ -1,0 +1,159 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE DIGITAL WELL | The Internet's Wishing Well</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F9F9FB;
+            --text: #1A1A1E;
+            --primary: #D4AF37; /* Oro sutil */
+            --primary-hover: #AA8B2C;
+            --card: #FFFFFF;
+            --border: #E4E4E7;
+            --muted: #71717A;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Space Grotesk', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding-bottom: 80px; }
+        
+        header { text-align: center; padding: 80px 20px 40px 20px; max-width: 800px; margin: 0 auto; }
+        .logo { font-size: 2.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .logo span { color: var(--primary); }
+        .subtitle { color: var(--muted); font-size: 1.15rem; line-height: 1.6; margin-bottom: 30px; }
+        
+        .global-counter { font-size: 4rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+        .counter-label { text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; color: var(--muted); margin-top: 5px; }
+
+        .container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; padding: 0 20px; }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+
+        .panel { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+        .panel-title { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 8px; font-size: 0.95rem; }
+        .input-text { width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: var(--bg); transition: border 0.2s; }
+        .input-text:focus { outline: none; border-color: var(--primary); }
+
+        .anchor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+        .anchor-btn { padding: 12px; border: 1px solid var(--border); background: var(--card); border-radius: 8px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+        .anchor-btn:hover, .anchor-btn.active { border-color: var(--primary); background: rgba(212, 175, 55, 0.05); color: var(--primary); }
+
+        .submit-btn { display: block; width: 100%; background: var(--text); color: #FFF; text-align: center; padding: 18px; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background 0.2s; letter-spacing: 1px; }
+        .submit-btn:hover { background: var(--primary); }
+
+        .leaderboard-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 1.05rem; }
+        .leaderboard-row:last-child { border-bottom: none; }
+        .country { display: flex; align-items: center; gap: 10px; }
+        .amount { font-weight: 700; color: var(--muted); }
+        .leaderboard-row:first-child .amount { color: var(--primary); }
+
+        .live-feed { height: 180px; overflow-y: hidden; display: flex; flex-direction: column-reverse; gap: 10px; margin-top: 40px; }
+        .feed-item { padding: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem; animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">THE DIGITAL <span>WELL</span></div>
+        <p class="subtitle">People have been tossing coins into wells for 2,000 years. Nobody is sure the wishes come true. Nobody has stopped either. Drop your wish, fund your country, and alter the global balance.</p>
+        <div class="global-counter" id="globalTotal">$84,120.00</div>
+        <div class="counter-label">Total Capital Tossed Into The Well</div>
+    </header>
+
+    <div class="container">
+        <!-- FORMULARIO DE APORTACIÓN -->
+        <div class="panel">
+            <div class="panel-title">Make Your Wish</div>
+            
+            <div class="form-group">
+                <label>Write your anonymous wish (It remains private within the well)</label>
+                <input type="text" class="input-text" placeholder="I wish for...">
+            </div>
+
+            <div class="form-group">
+                <label>Select your coin weight (The Kahneman Anchor)</label>
+                <div class="anchor-grid">
+                    <button class="anchor-btn">$100</button>
+                    <button class="anchor-btn">$50</button>
+                    <button class="anchor-btn">$25</button>
+                    <button class="anchor-btn active">$10</button>
+                </div>
+            </div>
+
+            <!-- TU ENLACE DE PAYPAL BUSINESS IRÁ AQUÍ EN EL PASO 2 -->
+            <a href="TU_LINK_DE_PAYPAL" class="submit-btn">Toss Coin Into The Well</a>
+        </div>
+
+        <!-- RANKING GEOPOLÍTICO -->
+        <div class="panel">
+            <div class="panel-title">Global Supremacy</div>
+            <div id="leaderboard">
+                <div class="leaderboard-row">
+                    <div class="country"><span>1.</span> 🇺🇸 United States</div>
+                    <div class="amount">$34,500.00</div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="country"><span>2.</span> 🇸🇦 Saudi Arabia</div>
+                    <div class="amount">$22,100.00</div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="country"><span>3.</span> 🇬🇧 United Kingdom</div>
+                    <div class="amount">$12,450.00</div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="country"><span>4.</span> 🇦🇪 United Arab Emirates</div>
+                    <div class="amount">$9,220.00</div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="country"><span>5.</span> 🇩🇪 Germany</div>
+                    <div class="amount">$5,850.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 30px;">
+        <div class="panel" style="grid-column: 1 / -1;">
+            <div class="panel-title" style="font-size: 1rem; color: var(--muted);">Recent Wishes Granted Entry</div>
+            <div class="live-feed" id="feedBox"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulador de tracción inicial (Vital para generar FOMO y confianza)
+        const items = [
+            { name: "Anonymous", country: "🇺🇸 USA", cash: 25 },
+            { name: "CryptoWhale", country: "🇸🇦 Saudi Arabia", cash: 100 },
+            { name: "WishfulThinker", country: "🇬🇧 UK", cash: 10 },
+            { name: "Anon", country: "🇨🇦 Canada", cash: 50 }
+        ];
+        let total = 84120.00;
+
+        function tick() {
+            const box = document.getElementById('feedBox');
+            const sample = items[Math.floor(Math.random() * items.length)];
+            const amt = Math.floor(Math.random() * 40) + 10;
+            
+            total += amt;
+            document.getElementById('globalTotal').innerText = '$' + total.toLocaleString('en-US', {minimumFractionDigits: 2});
+
+            const div = document.createElement('div');
+            div.className = 'feed-item';
+            div.innerHTML = `A coin of <strong>$${amt}.00</strong> was thrown from <strong>${sample.country}</strong>. A wish has sunk into the deep.`;
+            box.appendChild(div);
+
+            if(box.children.length > 4) box.removeChild(box.children[0]);
+        }
+        setInterval(tick, 6000);
+        tick();
+    </script>
+</body>
+</html>
