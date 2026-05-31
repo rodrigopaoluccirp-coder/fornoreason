@@ -3,137 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE GLOBAL LEDGER — Permanent Digital Footprints</title>
+    <title>THE GLOBAL LEDGER — Institutional Digital Footprints</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Combinación de lujo: Cinzel (Serif bancaria/lujo) e Inter (Geométrica para datos) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #FBFBFC;       /* Blanco Alabastro */
-            --text: #111111;     /* Negro Carbón */
-            --muted: #666666;    /* Gris Corporativo */
-            --gold: #C5A880;     /* Oro Champagne Mate */
-            --border: #E5E5E7;   /* Líneas finas estilo Apple */
+            --bg: #FAFAFA;
+            --text: #111111;
+            --muted: #666666;
+            --gold: #BC9C6E;
+            --gold-light: #F4EFE6;
+            --border: #EAEAEA;
             --card: #FFFFFF;
+            --shadow: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* Navigation */
+        nav { max-width: 1400px; margin: 0 auto; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+        .counter-box { font-size: 0.9rem; font-weight: 600; background: var(--card); padding: 8px 16px; border: 1px solid var(--border); border-radius: 4px; font-variant-numeric: tabular-nums; }
+
+        /* Main Hero */
+        .hero { max-width: 800px; margin: 80px auto 60px auto; text-align: center; padding: 0 20px; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 400; line-height: 1.15; letter-spacing: -1px; margin-bottom: 24px; }
+        .hero p { color: var(--muted); font-size: 1.1rem; line-height: 1.6; font-weight: 300; max-width: 620px; margin: 0 auto; }
+
+        /* Layout Grid */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
         
-        /* Encabezado Premium */
-        header { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
-        .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-        .global-counter { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px; }
+        /* The Sovereign Block (#01) */
+        .sovereign-container { max-width: 480px; margin: 0 auto 80px auto; }
+        .sovereign-card { background: var(--card); border: 1px solid var(--gold); border-radius: 6px; padding: 40px; text-align: center; box-shadow: 0 20px 40px rgba(188, 156, 110, 0.05); position: relative; }
+        .sovereign-badge { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); letter-spacing: 2px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+        .sovereign-title { font-family: 'Cinzel', serif; font-size: 1.7rem; font-weight: 700; margin-bottom: 6px; }
+        .sovereign-value { font-size: 1.2rem; font-weight: 600; color: var(--muted); margin-bottom: 24px; }
 
-        /* Sección Hero */
-        .hero { max-width: 800px; margin: 60px auto text-align: center; padding: 0 20px; text-align: center; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 2.8rem; font-weight: 500; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero p { color: var(--muted); font-size: 1.15rem; line-height: 1.6; max-width: 600px; margin: 0 auto; }
+        /* UI Elements / Buttons */
+        .btn-gold { display: block; width: 100%; background: var(--text); color: var(--bg); text-align: center; padding: 16px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s var(--shadow); text-decoration: none; }
+        .btn-gold:hover { background: #222; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
-        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-
-        /* El Trono Alpha */
-        .alpha-section { max-width: 500px; margin: 0 auto 60px auto; }
-        .alpha-card { background: var(--card); border: 2px solid var(--gold); border-radius: 4px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08); }
-        .alpha-tag { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-weight: 700; }
-        .alpha-leader { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; }
-        .alpha-bid { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+        /* The Grid Matrix */
+        .ledger-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-bottom: 120px; }
+        .matrix-item { background: var(--card); border: 1px solid var(--border); padding: 24px; border-radius: 4px; transition: all 0.3s var(--shadow); text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 140px; }
+        .matrix-item:hover { border-color: var(--text); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.03); }
+        .matrix-item.available { border-style: dashed; border-color: var(--gold); background: transparent; }
+        .matrix-item.available:hover { background: var(--gold-light); border-style: dashed; }
         
-        /* Botón de Acción Principal */
-        .btn-premium { display: inline-block; width: 100%; background: var(--text); color: var(--bg); text-align: center; padding: 16px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: none; border-radius: 2px; cursor: pointer; text-decoration: none; transition: all 0.2s ease; }
-        .btn-premium:hover { background: #222222; transform: translateY(-1px); }
+        .item-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+        .item-body { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; margin: 12px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .item-footer { font-size: 0.85rem; font-weight: 600; }
 
-        /* Tablero de Posiciones (The Grid) */
-        .ledger-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 40px; }
-        .grid-item { background: var(--card); border: 1px solid var(--border); padding: 20px; border-radius: 2px; transition: all 0.2s ease; text-decoration: none; color: inherit; }
-        .grid-item:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-        .rank { font-size: 0.8rem; color: var(--muted); font-weight: 500; margin-bottom: 10px; }
-        .brand-name { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .brand-bid { font-size: 0.9rem; font-weight: 700; color: var(--muted); }
+        /* Slidin Panel (Modal UX Perfecta) */
+        .side-panel { position: fixed; top: 0; right: -450px; width: 450px; height: 100%; background: var(--card); border-left: 1px solid var(--border); box-shadow: -20px 0 40px rgba(0,0,0,0.03); padding: 40px; z-index: 100; transition: right 0.4s var(--shadow); }
+        .side-panel.active { right: 0; }
+        .panel-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); opacity: 0; pointer-events: none; z-index: 99; transition: opacity 0.4s var(--shadow); }
+        .panel-overlay.active { opacity: 1; pointer-events: auto; }
+        
+        .panel-close { font-size: 1.5rem; background: none; border: none; cursor: pointer; float: right; margin-top: -10px; }
+        .panel-title { font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; letter-spacing: 1px; }
+        .form-control { width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; font-family: 'Inter', sans-serif; transition: border 0.2s; }
+        .form-control:focus { outline: none; border-color: var(--text); }
 
-        /* Pie de Página Legal */
-        footer { max-width: 1200px; margin: 100px auto 0 auto; padding: 40px 20px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.8rem; line-height: 1.6; }
-        .legal-links { margin-bottom: 15px; }
-        .legal-links a { color: var(--text); text-decoration: none; margin: 0 10px; font-weight: 500; }
-        .legal-links a:hover { color: var(--gold); }
+        /* Footer Corporate */
+        footer { border-top: 1px solid var(--border); background: var(--card); padding: 60px 40px; text-align: center; color: var(--muted); font-size: 0.8rem; line-height: 1.8; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: var(--text); text-decoration: none; margin: 0 15px; font-weight: 500; }
+        .footer-links a:hover { color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
         <div class="logo">The Global Ledger</div>
-        <div class="global-counter" id="globalTotal">Total Capital: $184,200.00 USD</div>
-    </header>
+        <div class="counter-box" id="ledgerTotal">Total Capital: $241,500.00 USD</div>
+    </nav>
 
     <section class="hero">
-        <h1>A Permanent Digital Monument.</h1>
-        <p>Only 100 slots reserved for high-net-worth individuals, premium brands, and creators. Secure your placement, display your asset, and anchor your digital footprint permanently.</p>
+        <h1>An Unalterable Record of Absolute Status.</h1>
+        <p>A limited-allocation digital architecture reserved exclusively for premier entities, corporations, and high-profile individuals. Establish validation. Anchor your footprint permanently.</p>
     </section>
 
     <div class="container">
-        <!-- EL TRONO ALPHA (MÁXIMA VISIBILIDAD) -->
-        <div class="alpha-section">
-            <div class="alpha-card">
-                <div class="alpha-tag">👑 Rank #01 / Sovereign</div>
-                <div class="alpha-leader">@TechFounderX 🇺🇸</div>
-                <div class="alpha-bid">$14,500.00 USD</div>
-                <!-- PASO 2: Aquí irá tu enlace de PayPal definitivo -->
-                <a href="YOUR_PAYPAL_LINK_HERE" class="btn-premium">Displace Leader</a>
+        <!-- SOVEREIGN BLOCK (#01) -->
+        <div class="sovereign-container">
+            <div class="sovereign-card">
+                <div class="sovereign-badge">👑 Position #01 / Sovereign Tier</div>
+                <div class="sovereign-title">@TechFounderX 🇺🇸</div>
+                <div class="sovereign-value">$15,000.00 USD</div>
+                <button class="btn-gold" onclick="openPanel('Sovereign Block (#01)', 15000)">Displace Sovereign</button>
             </div>
         </div>
 
-        <!-- LA CUADRÍCULA DE ESPACIOS ADQUIRIDOS -->
-        <div class="ledger-grid">
-            <!-- Bloque 2 -->
-            <a href="#" class="grid-item">
-                <div class="rank">#02</div>
-                <div class="brand-name">CryptoAlpha Fund 🇨🇭</div>
-                <div class="brand-bid">$9,200.00 USD</div>
-            </a>
-            <!-- Bloque 3 -->
-            <a href="#" class="grid-item">
-                <div class="rank">#03</div>
-                <div class="brand-name">VenturePartners 🇬🇧</div>
-                <div class="brand-bid">$5,100.00 USD</div>
-            </a>
-            <!-- Bloque Vacío para incentivar la compra -->
-            <a href="YOUR_PAYPAL_LINK_HERE" class="grid-item" style="border-style: dashed; background: transparent;">
-                <div class="rank" style="color: var(--gold);">#04</div>
-                <div class="brand-name" style="color: var(--gold); font-style: italic;">Available Slot</div>
-                <div class="brand-bid">Reserve Space</div>
-            </a>
-            <!-- Bloque Vacío para incentivar la compra -->
-            <a href="YOUR_PAYPAL_LINK_HERE" class="grid-item" style="border-style: dashed; background: transparent;">
-                <div class="rank" style="color: var(--gold);">#05</div>
-                <div class="brand-name" style="color: var(--gold); font-style: italic;">Available Slot</div>
-                <div class="brand-bid">Reserve Space</div>
-            </a>
+        <!-- MATRIX CHANNELS (100 BLOCKS) -->
+        <div class="ledger-matrix">
+            <div class="matrix-item">
+                <div class="item-header"><span>Position #02</span><span>🇨🇭 CH</span></div>
+                <div class="item-body">CryptoAlpha Ltd</div>
+                <div class="item-footer">$9,500.00 USD</div>
+            </div>
+            <div class="matrix-item">
+                <div class="item-header"><span>Position #03</span><span>🇬🇧 UK</span></div>
+                <div class="item-body">VenturePartners</div>
+                <div class="item-footer">$6,200.00 USD</div>
+            </div>
+            <!-- Bloques Disponibles Reales -->
+            <div class="matrix-item available" onclick="openPanel('Standard Allocation (#04)', 150)">
+                <div class="item-header" style="color: var(--gold);">Position #04</div>
+                <div class="item-body" style="color: var(--gold); font-weight: 400; font-style: italic;">Available Allocation</div>
+                <div class="item-footer" style="color: var(--gold);">Reserve Space — $150</div>
+            </div>
+            <div class="matrix-item available" onclick="openPanel('Standard Allocation (#05)', 150)">
+                <div class="item-header" style="color: var(--gold);">Position #05</div>
+                <div class="item-body" style="color: var(--gold); font-weight: 400; font-style: italic;">Available Allocation</div>
+                <div class="item-footer" style="color: var(--gold);">Reserve Space — $150</div>
+            </div>
         </div>
     </div>
 
-    <!-- BLINDAJE LEGAL CORPORATIVO PARA ANDORRA Y PAYPAL -->
+    <!-- PANEL LATERAL DE CAPTURA (PERFECT INTERACTION) -->
+    <div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
+    <div class="side-panel" id="sidePanel">
+        <button class="panel-close" onclick="closePanel()">×</button>
+        <div class="panel-title" id="panelTarget">Reserve Allocation</div>
+        
+        <div class="form-group">
+            <label>Brand / Individual Name</label>
+            <input type="text" class="form-control" placeholder="e.g., Apple Inc or @YourHandle">
+        </div>
+        <div class="form-group">
+            <label>Target Redirect URL</label>
+            <input type="url" class="form-control" placeholder="https://yourwebsite.com">
+        </div>
+        <div class="form-group">
+            <label>Origin Country</label>
+            <input type="text" class="form-control" placeholder="e.g., United States 🇺🇸">
+        </div>
+
+        <!-- El botón de acción final que enviará los datos y procesará el pago -->
+        <button class="btn-gold" style="margin-top: 20px;" id="payButton">Proceed to Secure Checkout</button>
+    </div>
+
+    <!-- INSTITUTIONAL COMPLIANCE FOOTER -->
     <footer>
-        <div class="legal-links">
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Privacy Policy</a>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Framework</a>
             <a href="#">Advertising Disclosure</a>
         </div>
         <p>© 2026 The Global Ledger. All rights reserved.</p>
-        <p style="margin-top: 10px; max-width: 700px; margin-left: auto; margin-right: auto;">
-            <strong>Legal Notice & Nature of Service:</strong> The Global Ledger provides premium digital ad space and visibility placement. Transactions are classified strictly as digital advertising services. Payments are final, completely non-refundable, and do not represent any financial investment, cryptocurrency asset, or pool of equity. 
+        <p style="max-width: 800px; margin: 15px auto 0 auto; font-weight: 300; font-size: 0.75rem;">
+            <strong>Advisory Notice & Operational Classification:</strong> The Global Ledger acts strictly as a premier commercial digital advertising display engine. All funds processed constitute direct payment for high-end digital visibility services. Transactions are fixed, binding, non-refundable, and present no financial asset acquisition, cryptocurrency token pooling, or investment vehicle claims. Registered and processed within compliance regulations.
         </p>
     </footer>
 
     <script>
-        // Simulación sutil y limpia de incremento orgánico en el mercado secundario
-        let currentTotal = 184200.00;
-        function updateLedgerCapital() {
-            const increment = Math.floor(Math.random() * 40) + 10;
-            currentTotal += increment;
-            document.getElementById('globalTotal').innerText = 'Total Capital: $' + currentTotal.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' USD';
+        // Lógica interactiva impecable para el panel de reservas
+        function openPanel(blockName, minValue) {
+            document.getElementById('panelTarget').innerText = blockName;
+            document.getElementById('sidePanel').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+            
+            // En el Paso 2/3, esto cambiará dinámicamente tu botón según el precio del bloque
+            document.getElementById('payButton').innerText = `Pay Securely — $${minValue.toLocaleString()} USD`;
         }
-        setInterval(updateLedgerCapital, 12000); // Actualización elegante cada 12 segundos
+
+        function closePanel() {
+            document.getElementById('sidePanel').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        // Simulación de actividad orgánica de capital
+        let totalVal = 241500.00;
+        setInterval(() => {
+            totalVal += Math.floor(Math.random() * 60) + 15;
+            document.getElementById('ledgerTotal').innerText = 'Total Capital: $' + totalVal.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' USD';
+        }, 15000);
     </script>
 </body>
 </html>
