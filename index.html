@@ -3,188 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE GLOBAL LEDGER — Institutional Digital Footprints</title>
+    <title>THE GLOBAL LEDGER</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #FAFAFA;
-            --text: #111111;
-            --muted: #666666;
-            --gold: #BC9C6E;
-            --gold-light: #F4EFE6;
-            --border: #EAEAEA;
+            --bg: #F8F9FA;
+            --text: #0A0A0A;
+            --muted: #64748B;
+            --accent: #0055FF; /* Azul Eléctrico de Alta Conversión */
+            --accent-light: #E6EEFF;
+            --border: #E2E8F0;
             --card: #FFFFFF;
-            --shadow: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
 
-        /* Navigation */
-        nav { max-width: 1400px; margin: 0 auto; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
-        .counter-box { font-size: 0.9rem; font-weight: 600; background: var(--card); padding: 8px 16px; border: 1px solid var(--border); border-radius: 4px; font-variant-numeric: tabular-nums; }
+        /* Minimal Header */
+        nav { max-width: 1200px; margin: 0 auto; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+        .counter { font-size: 0.95rem; font-weight: 700; background: var(--text); color: #FFF; padding: 6px 14px; border-radius: 4px; font-variant-numeric: tabular-nums; }
 
-        /* Main Hero */
-        .hero { max-width: 800px; margin: 80px auto 60px auto; text-align: center; padding: 0 20px; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 400; line-height: 1.15; letter-spacing: -1px; margin-bottom: 24px; }
-        .hero p { color: var(--muted); font-size: 1.1rem; line-height: 1.6; font-weight: 300; max-width: 620px; margin: 0 auto; }
+        /* Compressed Hero Section */
+        .hero { max-width: 700px; margin: 50px auto 40px auto; text-align: center; padding: 0 20px; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 2.6rem; font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+        .hero p { color: var(--muted); font-size: 1.05rem; font-weight: 400; max-width: 500px; margin: 0 auto; }
 
-        /* Layout Grid */
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        /* The Sovereign Block (#01) */
-        .sovereign-container { max-width: 480px; margin: 0 auto 80px auto; }
-        .sovereign-card { background: var(--card); border: 1px solid var(--gold); border-radius: 6px; padding: 40px; text-align: center; box-shadow: 0 20px 40px rgba(188, 156, 110, 0.05); position: relative; }
-        .sovereign-badge { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); letter-spacing: 2px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
-        .sovereign-title { font-family: 'Cinzel', serif; font-size: 1.7rem; font-weight: 700; margin-bottom: 6px; }
-        .sovereign-value { font-size: 1.2rem; font-weight: 600; color: var(--muted); margin-bottom: 24px; }
+        /* The Sovereign Spot (#01) */
+        .sovereign-zone { max-width: 440px; margin: 0 auto 50px auto; }
+        .sovereign-card { background: var(--card); border: 2px solid var(--accent); border-radius: 8px; padding: 30px; text-align: center; box-shadow: 0 15px 30px rgba(0, 85, 255, 0.04); }
+        .sovereign-badge { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--accent); letter-spacing: 1.5px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; }
+        .sovereign-title { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
+        .sovereign-value { font-size: 1.15rem; font-weight: 700; color: var(--muted); margin-bottom: 20px; }
 
-        /* UI Elements / Buttons */
-        .btn-gold { display: block; width: 100%; background: var(--text); color: var(--bg); text-align: center; padding: 16px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s var(--shadow); text-decoration: none; }
-        .btn-gold:hover { background: #222; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        /* Action Buttons */
+        .btn-action { display: block; width: 100%; background: var(--accent); color: #FFFFFF; text-align: center; padding: 14px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; border: none; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
+        .btn-action:hover { background: #0044CC; transform: translateY(-1px); box-shadow: 0 8px 16px rgba(0, 85, 255, 0.15); }
 
-        /* The Grid Matrix */
-        .ledger-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-bottom: 120px; }
-        .matrix-item { background: var(--card); border: 1px solid var(--border); padding: 24px; border-radius: 4px; transition: all 0.3s var(--shadow); text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 140px; }
-        .matrix-item:hover { border-color: var(--text); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.03); }
-        .matrix-item.available { border-style: dashed; border-color: var(--gold); background: transparent; }
-        .matrix-item.available:hover { background: var(--gold-light); border-style: dashed; }
+        /* Optimized Grid Matrix */
+        .ledger-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-bottom: 80px; }
+        .grid-node { background: var(--card); border: 1px solid var(--border); padding: 20px; border-radius: 6px; transition: all 0.2s ease; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; height: 115px; }
+        .grid-node:hover { border-color: var(--text); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.02); }
+        .grid-node.vacant { border-style: dashed; border-color: var(--accent); background: transparent; }
+        .grid-node.vacant:hover { background: var(--accent-light); border-style: solid; }
         
-        .item-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
-        .item-body { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; margin: 12px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .item-footer { font-size: 0.85rem; font-weight: 600; }
+        .node-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+        .node-title { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 800; margin: 8px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .node-price { font-size: 0.85rem; font-weight: 700; }
 
-        /* Slidin Panel (Modal UX Perfecta) */
-        .side-panel { position: fixed; top: 0; right: -450px; width: 450px; height: 100%; background: var(--card); border-left: 1px solid var(--border); box-shadow: -20px 0 40px rgba(0,0,0,0.03); padding: 40px; z-index: 100; transition: right 0.4s var(--shadow); }
+        /* Dynamic Slide Panel */
+        .side-panel { position: fixed; top: 0; right: -420px; width: 420px; height: 100%; background: var(--card); border-left: 1px solid var(--border); box-shadow: -15px 0 30px rgba(0,0,0,0.02); padding: 35px; z-index: 100; transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         .side-panel.active { right: 0; }
-        .panel-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); opacity: 0; pointer-events: none; z-index: 99; transition: opacity 0.4s var(--shadow); }
-        .panel-overlay.active { opacity: 1; pointer-events: auto; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.15); opacity: 0; pointer-events: none; z-index: 99; transition: opacity 0.3s ease; }
+        .overlay.active { opacity: 1; pointer-events: auto; }
         
-        .panel-close { font-size: 1.5rem; background: none; border: none; cursor: pointer; float: right; margin-top: -10px; }
-        .panel-title { font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        .panel-close { font-size: 1.4rem; background: none; border: none; cursor: pointer; float: right; color: var(--muted); }
+        .panel-heading { font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; }
         
-        .form-group { margin-bottom: 24px; }
-        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; letter-spacing: 1px; }
-        .form-control { width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; font-family: 'Inter', sans-serif; transition: border 0.2s; }
-        .form-control:focus { outline: none; border-color: var(--text); }
+        .field { margin-bottom: 18px; }
+        .field label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.5px; }
+        .input-box { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.95rem; font-family: 'Inter', sans-serif; }
+        .input-box:focus { outline: none; border-color: var(--accent); }
 
-        /* Footer Corporate */
-        footer { border-top: 1px solid var(--border); background: var(--card); padding: 60px 40px; text-align: center; color: var(--muted); font-size: 0.8rem; line-height: 1.8; }
-        .footer-links { margin-bottom: 20px; }
-        .footer-links a { color: var(--text); text-decoration: none; margin: 0 15px; font-weight: 500; }
-        .footer-links a:hover { color: var(--gold); }
+        /* Minimal Compliance Footer */
+        footer { border-top: 1px solid var(--border); background: var(--card); padding: 40px 20px; text-align: center; color: var(--muted); font-size: 0.75rem; line-height: 1.6; }
+        .foot-links { margin-bottom: 15px; }
+        .foot-links a { color: var(--text); text-decoration: none; margin: 0 10px; font-weight: 600; }
+        .foot-links a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">The Global Ledger</div>
-        <div class="counter-box" id="ledgerTotal">Total Capital: $241,500.00 USD</div>
+        <div class="counter" id="totalCounter">$241,500.00 USD</div>
     </nav>
 
     <section class="hero">
-        <h1>An Unalterable Record of Absolute Status.</h1>
-        <p>A limited-allocation digital architecture reserved exclusively for premier entities, corporations, and high-profile individuals. Establish validation. Anchor your footprint permanently.</p>
+        <h1>Unalterable Digital Status.</h1>
+        <p>100 premium spots reserved for brands, leaders, and creators. Secure your placement, link your asset, and anchor your footprint permanently.</p>
     </section>
 
     <div class="container">
-        <!-- SOVEREIGN BLOCK (#01) -->
-        <div class="sovereign-container">
+        <div class="sovereign-zone">
             <div class="sovereign-card">
-                <div class="sovereign-badge">👑 Position #01 / Sovereign Tier</div>
+                <div class="sovereign-badge">👑 Position #01</div>
                 <div class="sovereign-title">@TechFounderX 🇺🇸</div>
                 <div class="sovereign-value">$15,000.00 USD</div>
-                <button class="btn-gold" onclick="openPanel('Sovereign Block (#01)', 15000)">Displace Sovereign</button>
+                <button class="btn-action" onclick="openPanel('Sovereign Spot (#01)', 15000)">Displace Leader</button>
             </div>
         </div>
 
-        <!-- MATRIX CHANNELS (100 BLOCKS) -->
-        <div class="ledger-matrix">
-            <div class="matrix-item">
-                <div class="item-header"><span>Position #02</span><span>🇨🇭 CH</span></div>
-                <div class="item-body">CryptoAlpha Ltd</div>
-                <div class="item-footer">$9,500.00 USD</div>
+        <div class="ledger-grid">
+            <div class="grid-node">
+                <div class="node-meta"><span>Position #02</span><span>🇨🇭 CH</span></div>
+                <div class="node-title">CryptoAlpha Ltd</div>
+                <div class="node-price">$9,500.00 USD</div>
             </div>
-            <div class="matrix-item">
-                <div class="item-header"><span>Position #03</span><span>🇬🇧 UK</span></div>
-                <div class="item-body">VenturePartners</div>
-                <div class="item-footer">$6,200.00 USD</div>
+            <div class="grid-node">
+                <div class="node-meta"><span>Position #03</span><span>🇬🇧 UK</span></div>
+                <div class="node-title">VenturePartners</div>
+                <div class="node-price">$6,200.00 USD</div>
             </div>
-            <!-- Bloques Disponibles Reales -->
-            <div class="matrix-item available" onclick="openPanel('Standard Allocation (#04)', 150)">
-                <div class="item-header" style="color: var(--gold);">Position #04</div>
-                <div class="item-body" style="color: var(--gold); font-weight: 400; font-style: italic;">Available Allocation</div>
-                <div class="item-footer" style="color: var(--gold);">Reserve Space — $150</div>
+            <div class="grid-node vacant" onclick="openPanel('Allocation Space (#04)', 150)">
+                <div class="node-meta" style="color: var(--accent);">Position #04</div>
+                <div class="node-title" style="color: var(--accent); font-weight: 400; font-style: italic;">Available</div>
+                <div class="node-price" style="color: var(--accent);">Reserve — $150</div>
             </div>
-            <div class="matrix-item available" onclick="openPanel('Standard Allocation (#05)', 150)">
-                <div class="item-header" style="color: var(--gold);">Position #05</div>
-                <div class="item-body" style="color: var(--gold); font-weight: 400; font-style: italic;">Available Allocation</div>
-                <div class="item-footer" style="color: var(--gold);">Reserve Space — $150</div>
+            <div class="grid-node vacant" onclick="openPanel('Allocation Space (#05)', 150)">
+                <div class="node-meta" style="color: var(--accent);">Position #05</div>
+                <div class="node-title" style="color: var(--accent); font-weight: 400; font-style: italic;">Available</div>
+                <div class="node-price" style="color: var(--accent);">Reserve — $150</div>
             </div>
         </div>
     </div>
 
-    <!-- PANEL LATERAL DE CAPTURA (PERFECT INTERACTION) -->
-    <div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
-    <div class="side-panel" id="sidePanel">
+    <div class="overlay" id="blurOverlay" onclick="closePanel()"></div>
+    <div class="side-panel" id="checkoutPanel">
         <button class="panel-close" onclick="closePanel()">×</button>
-        <div class="panel-title" id="panelTarget">Reserve Allocation</div>
+        <div class="panel-heading" id="panelTitle">Reserve Space</div>
         
-        <div class="form-group">
-            <label>Brand / Individual Name</label>
-            <input type="text" class="form-control" placeholder="e.g., Apple Inc or @YourHandle">
+        <div class="field">
+            <label>Brand / Name</label>
+            <input type="text" class="input-box" placeholder="e.g., Apple Inc or @Username">
         </div>
-        <div class="form-group">
-            <label>Target Redirect URL</label>
-            <input type="url" class="form-control" placeholder="https://yourwebsite.com">
+        <div class="field">
+            <label>Destination Link</label>
+            <input type="url" class="input-box" placeholder="https://yourwebsite.com">
         </div>
-        <div class="form-group">
-            <label>Origin Country</label>
-            <input type="text" class="form-control" placeholder="e.g., United States 🇺🇸">
+        <div class="field">
+            <label>Your Country</label>
+            <input type="text" class="input-box" placeholder="e.g., United States 🇺🇸">
         </div>
 
-        <!-- El botón de acción final que enviará los datos y procesará el pago -->
-        <button class="btn-gold" style="margin-top: 20px;" id="payButton">Proceed to Secure Checkout</button>
+        <button class="btn-action" style="margin-top: 15px;" id="checkoutBtn">Proceed to Checkout</button>
     </div>
 
-    <!-- INSTITUTIONAL COMPLIANCE FOOTER -->
     <footer>
-        <div class="footer-links">
+        <div class="foot-links">
             <a href="#">Terms of Service</a>
-            <a href="#">Privacy Framework</a>
-            <a href="#">Advertising Disclosure</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Advertising Terms</a>
         </div>
         <p>© 2026 The Global Ledger. All rights reserved.</p>
-        <p style="max-width: 800px; margin: 15px auto 0 auto; font-weight: 300; font-size: 0.75rem;">
-            <strong>Advisory Notice & Operational Classification:</strong> The Global Ledger acts strictly as a premier commercial digital advertising display engine. All funds processed constitute direct payment for high-end digital visibility services. Transactions are fixed, binding, non-refundable, and present no financial asset acquisition, cryptocurrency token pooling, or investment vehicle claims. Registered and processed within compliance regulations.
+        <p style="max-width: 750px; margin: 12px auto 0 auto; font-weight: 400; font-size: 0.7rem; color: #94A3B8;">
+            <strong>Advisory Notice:</strong> This platform operates strictly as a commercial digital advertising layout engine. Payments processed cover premium digital visibility and linking services. All transactions are final, immediate, and non-refundable. They do not constitute asset purchases, cryptocurrency distribution, equity pools, or financial investments.
         </p>
     </footer>
 
     <script>
-        // Lógica interactiva impecable para el panel de reservas
-        function openPanel(blockName, minValue) {
-            document.getElementById('panelTarget').innerText = blockName;
-            document.getElementById('sidePanel').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-            
-            // En el Paso 2/3, esto cambiará dinámicamente tu botón según el precio del bloque
-            document.getElementById('payButton').innerText = `Pay Securely — $${minValue.toLocaleString()} USD`;
+        function openPanel(name, price) {
+            document.getElementById('panelTitle').innerText = name;
+            document.getElementById('checkoutPanel').classList.add('active');
+            document.getElementById('blurOverlay').classList.add('active');
+            document.getElementById('checkoutBtn').innerText = `Pay Securely — $${price.toLocaleString()} USD`;
         }
 
         function closePanel() {
-            document.getElementById('sidePanel').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
+            document.getElementById('checkoutPanel').classList.remove('active');
+            document.getElementById('blurOverlay').classList.remove('active');
         }
 
-        // Simulación de actividad orgánica de capital
-        let totalVal = 241500.00;
+        // Slow, authentic financial volume scaling simulation
+        let liveTotal = 241500.00;
         setInterval(() => {
-            totalVal += Math.floor(Math.random() * 60) + 15;
-            document.getElementById('ledgerTotal').innerText = 'Total Capital: $' + totalVal.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' USD';
-        }, 15000);
+            liveTotal += Math.floor(Math.random() * 45) + 10;
+            document.getElementById('totalCounter').innerText = '$' + liveTotal.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' USD';
+        }, 14000);
     </script>
 </body>
 </html>
